@@ -1,0 +1,4346 @@
+cscope 15 $HOME/eclipse_workspace/CubeTest/Src               0000026960
+	@freertos.c
+
+45 
+	~"F»eRTOS.h
+"
+
+46 
+	~"sk.h
+"
+
+	@main.c
+
+44 
+	~"maš.h
+"
+
+45 
+	~"¡m32f4xx_h®.h
+"
+
+46 
+	~"cmsis_os.h
+"
+
+53 
+osTh»adId
+ 
+	gdeçuÉTaskHªdË
+;
+
+61 
+Sy¡emClock_CÚfig
+();
+
+62 
+E¼Ü_HªdËr
+();
+
+63 
+MX_GPIO_In™
+();
+
+64 
+S¹DeçuÉTask
+(cÚ¡ * 
+¬gum’t
+);
+
+73 
+	#LD3_Pš
+ 
+GPIO_PIN_13
+
+
+	)
+
+74 
+	#LD3_GPIO_PÜt
+ 
+GPIOG
+
+
+	)
+
+75 
+	#LD4_Pš
+ 
+GPIO_PIN_14
+
+
+	)
+
+76 
+	#LD4_GPIO_PÜt
+ 
+GPIOG
+
+
+	)
+
+77 
+	$Light_Task
+(*
+pvP¬am‘”s
+)
+
+79 
+ušt8_t
+ 
+æag
+ = 0;
+
+83 ià(
+æag
+)
+
+84 
+	`HAL_GPIO_Wr™ePš
+(
+GPIOG
+, 
+LD3_Pš
+|
+LD4_Pš
+, 
+GPIO_PIN_RESET
+);
+
+86 
+	`HAL_GPIO_Wr™ePš
+(
+GPIOG
+, 
+LD3_Pš
+|
+LD4_Pš
+, 
+GPIO_PIN_SET
+);
+
+87 
+æag
+ = ~flag;
+
+88 
+	`vTaskD–ay
+(1000 / 
+pÜtTICK_RATE_MS
+);
+
+90 
+	}
+}
+
+94 
+	$maš
+()
+
+104 
+	`HAL_In™
+();
+
+107 
+	`Sy¡emClock_CÚfig
+();
+
+110 
+	`MX_GPIO_In™
+();
+
+130 
+	`osTh»adDef
+(
+deçuÉTask
+, 
+S¹DeçuÉTask
+, 
+osPriÜ™yNÜm®
+, 0, 128);
+
+131 
+deçuÉTaskHªdË
+ = 
+	`osTh»adC»©e
+(
+	`osTh»ad
+(
+deçuÉTask
+), 
+NULL
+);
+
+135 
+	`xTaskC»©e
+(
+Light_Task
+, "LED", 200, 
+NULL
+, 8, NULL);
+
+144 
+	`osK”ÃlS¹
+();
+
+159 
+	}
+}
+
+163 
+	$Sy¡emClock_CÚfig
+()
+
+166 
+RCC_OscIn™Ty³Def
+ 
+RCC_OscIn™SŒuù
+;
+
+167 
+RCC_ClkIn™Ty³Def
+ 
+RCC_ClkIn™SŒuù
+;
+
+171 
+	`__HAL_RCC_PWR_CLK_ENABLE
+();
+
+173 
+	`__HAL_PWR_VOLTAGESCALING_CONFIG
+(
+PWR_REGULATOR_VOLTAGE_SCALE1
+);
+
+177 
+RCC_OscIn™SŒuù
+.
+OscžÏtÜTy³
+ = 
+RCC_OSCILLATORTYPE_HSI
+;
+
+178 
+RCC_OscIn™SŒuù
+.
+HSIS‹
+ = 
+RCC_HSI_ON
+;
+
+179 
+RCC_OscIn™SŒuù
+.
+HSIC®ib¿tiÚV®ue
+ = 16;
+
+180 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLS‹
+ = 
+RCC_PLL_ON
+;
+
+181 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLSourû
+ = 
+RCC_PLLSOURCE_HSI
+;
+
+182 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLM
+ = 8;
+
+183 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLN
+ = 180;
+
+184 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLP
+ = 
+RCC_PLLP_DIV2
+;
+
+185 
+RCC_OscIn™SŒuù
+.
+PLL
+.
+PLLQ
+ = 7;
+
+186 ià(
+	`HAL_RCC_OscCÚfig
+(&
+RCC_OscIn™SŒuù
+è!ð
+HAL_OK
+)
+
+188 
+	`E¼Ü_HªdËr
+();
+
+193 ià(
+	`HAL_PWREx_EÇbËOv”Drive
+(è!ð
+HAL_OK
+)
+
+195 
+	`E¼Ü_HªdËr
+();
+
+200 
+RCC_ClkIn™SŒuù
+.
+ClockTy³
+ = 
+RCC_CLOCKTYPE_HCLK
+|
+RCC_CLOCKTYPE_SYSCLK
+
+
+201 |
+RCC_CLOCKTYPE_PCLK1
+|
+RCC_CLOCKTYPE_PCLK2
+;
+
+202 
+RCC_ClkIn™SŒuù
+.
+SYSCLKSourû
+ = 
+RCC_SYSCLKSOURCE_PLLCLK
+;
+
+203 
+RCC_ClkIn™SŒuù
+.
+AHBCLKDivid”
+ = 
+RCC_SYSCLK_DIV1
+;
+
+204 
+RCC_ClkIn™SŒuù
+.
+APB1CLKDivid”
+ = 
+RCC_HCLK_DIV4
+;
+
+205 
+RCC_ClkIn™SŒuù
+.
+APB2CLKDivid”
+ = 
+RCC_HCLK_DIV2
+;
+
+207 ià(
+	`HAL_RCC_ClockCÚfig
+(&
+RCC_ClkIn™SŒuù
+, 
+FLASH_LATENCY_5
+è!ð
+HAL_OK
+)
+
+209 
+	`E¼Ü_HªdËr
+();
+
+214 
+	`HAL_SYSTICK_CÚfig
+(
+	`HAL_RCC_G‘HCLKF»q
+()/1000);
+
+218 
+	`HAL_SYSTICK_CLKSourûCÚfig
+(
+SYSTICK_CLKSOURCE_HCLK
+);
+
+221 
+	`HAL_NVIC_S‘PriÜ™y
+(
+SysTick_IRQn
+, 15, 0);
+
+222 
+	}
+}
+
+302 
+	$MX_GPIO_In™
+()
+
+305 
+GPIO_In™Ty³Def
+ 
+GPIO_In™SŒuù
+;
+
+308 
+	`__HAL_RCC_GPIOE_CLK_ENABLE
+();
+
+309 
+	`__HAL_RCC_GPIOC_CLK_ENABLE
+();
+
+310 
+	`__HAL_RCC_GPIOF_CLK_ENABLE
+();
+
+311 
+	`__HAL_RCC_GPIOH_CLK_ENABLE
+();
+
+312 
+	`__HAL_RCC_GPIOA_CLK_ENABLE
+();
+
+313 
+	`__HAL_RCC_GPIOB_CLK_ENABLE
+();
+
+314 
+	`__HAL_RCC_GPIOG_CLK_ENABLE
+();
+
+315 
+	`__HAL_RCC_GPIOD_CLK_ENABLE
+();
+
+318 
+	`HAL_GPIO_Wr™ePš
+(
+GPIOC
+, 
+NCS_MEMS_SPI_Pš
+|
+CSX_Pš
+|
+OTG_FS_PSO_Pš
+, 
+GPIO_PIN_RESET
+);
+
+321 
+	`HAL_GPIO_Wr™ePš
+(
+ACP_RST_GPIO_PÜt
+, 
+ACP_RST_Pš
+, 
+GPIO_PIN_RESET
+);
+
+324 
+	`HAL_GPIO_Wr™ePš
+(
+GPIOD
+, 
+RDX_Pš
+|
+WRX_DCX_Pš
+, 
+GPIO_PIN_RESET
+);
+
+327 
+	`HAL_GPIO_Wr™ePš
+(
+GPIOG
+, 
+LD3_Pš
+|
+LD4_Pš
+, 
+GPIO_PIN_RESET
+);
+
+331 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_2
+|
+GPIO_PIN_3
+|
+GPIO_PIN_4
+|
+GPIO_PIN_5
+
+
+332 |
+GPIO_PIN_6
+;
+
+333 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+334 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+335 
+	`HAL_GPIO_In™
+(
+GPIOE
+, &
+GPIO_In™SŒuù
+);
+
+339 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_13
+|
+GPIO_PIN_3
+|
+GPIO_PIN_8
+|
+GPIO_PIN_11
+
+
+340 |
+GPIO_PIN_12
+;
+
+341 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+342 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+343 
+	`HAL_GPIO_In™
+(
+GPIOC
+, &
+GPIO_In™SŒuù
+);
+
+348 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+A0_Pš
+|
+A1_Pš
+|
+A2_Pš
+|
+A3_Pš
+
+
+349 |
+A4_Pš
+|
+A5_Pš
+|
+SDNRAS_Pš
+|
+A6_Pš
+
+
+350 |
+A7_Pš
+|
+A8_Pš
+|
+A9_Pš
+;
+
+351 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+352 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+353 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+354 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+355 
+	`HAL_GPIO_In™
+(
+GPIOF
+, &
+GPIO_In™SŒuù
+);
+
+358 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_6
+;
+
+359 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+360 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+361 
+	`HAL_GPIO_In™
+(
+GPIOF
+, &
+GPIO_In™SŒuù
+);
+
+364 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+SPI5_SCK_Pš
+|
+SPI5_MISO_Pš
+|
+SPI5_MOSI_Pš
+;
+
+365 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+366 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+367 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+368 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF5_SPI5
+;
+
+369 
+	`HAL_GPIO_In™
+(
+GPIOF
+, &
+GPIO_In™SŒuù
+);
+
+372 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+ENABLE_Pš
+;
+
+373 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+374 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+375 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+376 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+377 
+	`HAL_GPIO_In™
+(
+ENABLE_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+380 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+SDNWE_Pš
+;
+
+381 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+382 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+383 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+384 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+385 
+	`HAL_GPIO_In™
+(
+SDNWE_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+388 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+NCS_MEMS_SPI_Pš
+|
+CSX_Pš
+|
+OTG_FS_PSO_Pš
+;
+
+389 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_OUTPUT_PP
+;
+
+390 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+391 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+392 
+	`HAL_GPIO_In™
+(
+GPIOC
+, &
+GPIO_In™SŒuù
+);
+
+395 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+B1_Pš
+|
+MEMS_INT2_Pš
+|
+MEMS_INT2A2_Pš
+|
+TP_INT1_Pš
+;
+
+396 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_EVT_RISING
+;
+
+397 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+398 
+	`HAL_GPIO_In™
+(
+GPIOA
+, &
+GPIO_In™SŒuù
+);
+
+402 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+B5_Pš
+|
+VSYNC_Pš
+|
+G2_Pš
+|
+R4_Pš
+
+
+403 |
+R5_Pš
+;
+
+404 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+405 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+406 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+407 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+408 
+	`HAL_GPIO_In™
+(
+GPIOA
+, &
+GPIO_In™SŒuù
+);
+
+411 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_5
+|
+GPIO_PIN_9
+|
+GPIO_PIN_10
+;
+
+412 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+413 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+414 
+	`HAL_GPIO_In™
+(
+GPIOA
+, &
+GPIO_In™SŒuù
+);
+
+417 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+ACP_RST_Pš
+;
+
+418 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_OUTPUT_PP
+;
+
+419 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+420 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+421 
+	`HAL_GPIO_In™
+(
+ACP_RST_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+424 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+OTG_FS_OC_Pš
+;
+
+425 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_EVT_RISING
+;
+
+426 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+427 
+	`HAL_GPIO_In™
+(
+OTG_FS_OC_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+430 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+R3_Pš
+|
+R6_Pš
+;
+
+431 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+432 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+433 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+434 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF9_LTDC
+;
+
+435 
+	`HAL_GPIO_In™
+(
+GPIOB
+, &
+GPIO_In™SŒuù
+);
+
+438 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+BOOT1_Pš
+;
+
+439 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_INPUT
+;
+
+440 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+441 
+	`HAL_GPIO_In™
+(
+BOOT1_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+445 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+A10_Pš
+|
+A11_Pš
+|
+BA0_Pš
+|
+BA1_Pš
+
+
+446 |
+SDCLK_Pš
+|
+SDNCAS_Pš
+;
+
+447 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+448 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+449 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+450 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+451 
+	`HAL_GPIO_In™
+(
+GPIOG
+, &
+GPIO_In™SŒuù
+);
+
+456 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+D4_Pš
+|
+D5_Pš
+|
+D6_Pš
+|
+D7_Pš
+
+
+457 |
+D8_Pš
+|
+D9_Pš
+|
+D10_Pš
+|
+D11_Pš
+
+
+458 |
+D12_Pš
+|
+NBL0_Pš
+|
+NBL1_Pš
+;
+
+459 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+460 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+461 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+462 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+463 
+	`HAL_GPIO_In™
+(
+GPIOE
+, &
+GPIO_In™SŒuù
+);
+
+466 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+G4_Pš
+|
+G5_Pš
+|
+B6_Pš
+|
+B7_Pš
+;
+
+467 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+468 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+469 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+470 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+471 
+	`HAL_GPIO_In™
+(
+GPIOB
+, &
+GPIO_In™SŒuù
+);
+
+474 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+OTG_FS_ID_Pš
+|
+OTG_FS_DM_Pš
+|
+OTG_FS_DP_Pš
+;
+
+475 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+476 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+477 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+478 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_OTG_HS_FS
+;
+
+479 
+	`HAL_GPIO_In™
+(
+GPIOB
+, &
+GPIO_In™SŒuù
+);
+
+482 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+VBUS_FS_Pš
+;
+
+483 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_INPUT
+;
+
+484 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+485 
+	`HAL_GPIO_In™
+(
+VBUS_FS_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+489 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+D13_Pš
+|
+D14_Pš
+|
+D15_Pš
+|
+D0_Pš
+
+
+490 |
+D1_Pš
+|
+D2_Pš
+|
+D3_Pš
+;
+
+491 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+492 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+493 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+494 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+495 
+	`HAL_GPIO_In™
+(
+GPIOD
+, &
+GPIO_In™SŒuù
+);
+
+498 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+TE_Pš
+;
+
+499 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_INPUT
+;
+
+500 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+501 
+	`HAL_GPIO_In™
+(
+TE_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+504 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+RDX_Pš
+|
+WRX_DCX_Pš
+;
+
+505 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_OUTPUT_PP
+;
+
+506 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+507 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+508 
+	`HAL_GPIO_In™
+(
+GPIOD
+, &
+GPIO_In™SŒuù
+);
+
+511 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_2
+|
+GPIO_PIN_3
+|
+GPIO_PIN_9
+;
+
+512 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+513 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+514 
+	`HAL_GPIO_In™
+(
+GPIOG
+, &
+GPIO_In™SŒuù
+);
+
+517 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+R7_Pš
+|
+DOTCLK_Pš
+|
+B3_Pš
+;
+
+518 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+519 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+520 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+521 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+522 
+	`HAL_GPIO_In™
+(
+GPIOG
+, &
+GPIO_In™SŒuù
+);
+
+525 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+HSYNC_Pš
+|
+G6_Pš
+|
+R2_Pš
+;
+
+526 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+527 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+528 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+529 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+530 
+	`HAL_GPIO_In™
+(
+GPIOC
+, &
+GPIO_In™SŒuù
+);
+
+533 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+I2C3_SDA_Pš
+;
+
+534 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_OD
+;
+
+535 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_PULLUP
+;
+
+536 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+537 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF4_I2C3
+;
+
+538 
+	`HAL_GPIO_In™
+(
+I2C3_SDA_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+541 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+I2C3_SCL_Pš
+;
+
+542 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_OD
+;
+
+543 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_PULLUP
+;
+
+544 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+545 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF4_I2C3
+;
+
+546 
+	`HAL_GPIO_In™
+(
+I2C3_SCL_GPIO_PÜt
+, &
+GPIO_In™SŒuù
+);
+
+549 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_2
+|
+GPIO_PIN_4
+|
+GPIO_PIN_5
+|
+GPIO_PIN_7
+;
+
+550 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+551 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+552 
+	`HAL_GPIO_In™
+(
+GPIOD
+, &
+GPIO_In™SŒuù
+);
+
+555 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+G7_Pš
+|
+B2_Pš
+;
+
+556 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+557 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+558 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+559 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF14_LTDC
+;
+
+560 
+	`HAL_GPIO_In™
+(
+GPIOD
+, &
+GPIO_In™SŒuù
+);
+
+563 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+G3_Pš
+|
+B4_Pš
+;
+
+564 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+565 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+566 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+567 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF9_LTDC
+;
+
+568 
+	`HAL_GPIO_In™
+(
+GPIOG
+, &
+GPIO_In™SŒuù
+);
+
+571 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+LD3_Pš
+|
+LD4_Pš
+;
+
+572 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_OUTPUT_PP
+;
+
+573 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+574 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_LOW
+;
+
+575 
+	`HAL_GPIO_In™
+(
+GPIOG
+, &
+GPIO_In™SŒuù
+);
+
+578 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+GPIO_PIN_3
+|
+GPIO_PIN_4
+|
+GPIO_PIN_7
+;
+
+579 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_ANALOG
+;
+
+580 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+581 
+	`HAL_GPIO_In™
+(
+GPIOB
+, &
+GPIO_In™SŒuù
+);
+
+584 
+GPIO_In™SŒuù
+.
+Pš
+ = 
+SDCKE1_Pš
+|
+SDNE1_Pš
+;
+
+585 
+GPIO_In™SŒuù
+.
+Mode
+ = 
+GPIO_MODE_AF_PP
+;
+
+586 
+GPIO_In™SŒuù
+.
+PuÎ
+ = 
+GPIO_NOPULL
+;
+
+587 
+GPIO_In™SŒuù
+.
+S³ed
+ = 
+GPIO_SPEED_FREQ_VERY_HIGH
+;
+
+588 
+GPIO_In™SŒuù
+.
+AÉ”Ç‹
+ = 
+GPIO_AF12_FMC
+;
+
+589 
+	`HAL_GPIO_In™
+(
+GPIOB
+, &
+GPIO_In™SŒuù
+);
+
+591 
+	}
+}
+
+598 
+	$S¹DeçuÉTask
+(cÚ¡ * 
+¬gum’t
+)
+
+605 
+	`osD–ay
+(1);
+
+608 
+	}
+}
+
+618 
+	$HAL_TIM_P”iodEÏp£dC®lback
+(
+TIM_HªdËTy³Def
+ *
+htim
+)
+
+623 ià(
+htim
+->
+In¡ªû
+ =ð
+TIM14
+) {
+
+624 
+	`HAL_IncTick
+();
+
+629 
+	}
+}
+
+636 
+	$E¼Ü_HªdËr
+()
+
+644 
+	}
+}
+
+646 #ifdeà
+USE_FULL_ASSERT
+
+
+655 
+	$as£¹_çžed
+(
+ušt8_t
+* 
+fže
+, 
+ušt32_t
+ 
+lše
+)
+
+662 
+	}
+}
+
+	@stm32f4xx_hal_msp.c
+
+45 
+	~"¡m32f4xx_h®.h
+"
+
+47 
+E¼Ü_HªdËr
+();
+
+54 
+	$HAL_M¥In™
+()
+
+60 
+	`HAL_NVIC_S‘PriÜ™yGroupšg
+(
+NVIC_PRIORITYGROUP_4
+);
+
+64 
+	`HAL_NVIC_S‘PriÜ™y
+(
+MemÜyMªagem’t_IRQn
+, 0, 0);
+
+66 
+	`HAL_NVIC_S‘PriÜ™y
+(
+BusFauÉ_IRQn
+, 0, 0);
+
+68 
+	`HAL_NVIC_S‘PriÜ™y
+(
+U§geFauÉ_IRQn
+, 0, 0);
+
+70 
+	`HAL_NVIC_S‘PriÜ™y
+(
+SVC®l_IRQn
+, 0, 0);
+
+72 
+	`HAL_NVIC_S‘PriÜ™y
+(
+DebugMÚ™Ü_IRQn
+, 0, 0);
+
+74 
+	`HAL_NVIC_S‘PriÜ™y
+(
+P’dSV_IRQn
+, 15, 0);
+
+76 
+	`HAL_NVIC_S‘PriÜ™y
+(
+SysTick_IRQn
+, 15, 0);
+
+81 
+	}
+}
+
+	@stm32f4xx_hal_timebase_TIM.c
+
+45 
+	~"¡m32f4xx_h®.h
+"
+
+46 
+	~"¡m32f4xx_h®_tim.h
+"
+
+59 
+TIM_HªdËTy³Def
+ 
+	ghtim14
+;
+
+60 
+ušt32_t
+ 
+	guwInüem’tS‹
+ = 0;
+
+73 
+HAL_StusTy³Def
+ 
+	$HAL_In™Tick
+(
+ušt32_t
+ 
+TickPriÜ™y
+)
+
+75 
+RCC_ClkIn™Ty³Def
+ 
+þkcÚfig
+;
+
+76 
+ušt32_t
+ 
+uwTimþock
+ = 0;
+
+77 
+ušt32_t
+ 
+uwP»sÿËrV®ue
+ = 0;
+
+78 
+ušt32_t
+ 
+pFL©’cy
+;
+
+81 
+	`HAL_NVIC_S‘PriÜ™y
+(
+TIM8_TRG_COM_TIM14_IRQn
+, 
+TickPriÜ™y
+ ,0);
+
+84 
+	`HAL_NVIC_EÇbËIRQ
+(
+TIM8_TRG_COM_TIM14_IRQn
+);
+
+87 
+	`__HAL_RCC_TIM14_CLK_ENABLE
+();
+
+90 
+	`HAL_RCC_G‘ClockCÚfig
+(&
+þkcÚfig
+, &
+pFL©’cy
+);
+
+93 
+uwTimþock
+ = 2*
+	`HAL_RCC_G‘PCLK1F»q
+();
+
+96 
+uwP»sÿËrV®ue
+ = (
+ušt32_t
+è((
+uwTimþock
+ / 1000000) - 1);
+
+99 
+htim14
+.
+In¡ªû
+ = 
+TIM14
+;
+
+107 
+htim14
+.
+In™
+.
+P”iod
+ = (1000000 / 1000) - 1;
+
+108 
+htim14
+.
+In™
+.
+P»sÿËr
+ = 
+uwP»sÿËrV®ue
+;
+
+109 
+htim14
+.
+In™
+.
+ClockDivisiÚ
+ = 0;
+
+110 
+htim14
+.
+In™
+.
+CouÁ”Mode
+ = 
+TIM_COUNTERMODE_UP
+;
+
+111 if(
+	`HAL_TIM_Ba£_In™
+(&
+htim14
+è=ð
+HAL_OK
+)
+
+114  
+	`HAL_TIM_Ba£_S¹_IT
+(&
+htim14
+);
+
+118  
+HAL_ERROR
+;
+
+119 
+	}
+}
+
+127 
+	$HAL_Su¥’dTick
+()
+
+130 
+	`__HAL_TIM_DISABLE_IT
+(&
+htim14
+, 
+TIM_IT_UPDATE
+);
+
+131 
+	}
+}
+
+139 
+	$HAL_ResumeTick
+()
+
+142 
+	`__HAL_TIM_ENABLE_IT
+(&
+htim14
+, 
+TIM_IT_UPDATE
+);
+
+143 
+	}
+}
+
+	@stm32f4xx_it.c
+
+34 
+	~"¡m32f4xx_h®.h
+"
+
+35 
+	~"¡m32f4xx.h
+"
+
+36 
+	~"¡m32f4xx_™.h
+"
+
+37 
+	~"cmsis_os.h
+"
+
+45 
+TIM_HªdËTy³Def
+ 
+htim14
+;
+
+54 
+	$SysTick_HªdËr
+()
+
+59 
+	`osSy¡ickHªdËr
+();
+
+63 
+	}
+}
+
+75 
+	$TIM8_TRG_COM_TIM14_IRQHªdËr
+()
+
+80 
+	`HAL_TIM_IRQHªdËr
+(&
+htim14
+);
+
+84 
+	}
+}
+
+	@system_stm32f4xx.c
+
+67 
+	~"¡m32f4xx.h
+"
+
+69 #ià!
+defšed
+ (
+HSE_VALUE
+)
+
+70 
+	#HSE_VALUE
+ ((
+ušt32_t
+)25000000è
+
+	)
+
+73 #ià!
+defšed
+ (
+HSI_VALUE
+)
+
+74 
+	#HSI_VALUE
+ ((
+ušt32_t
+)16000000è
+
+	)
+
+95 #ià
+defšed
+(
+STM32F405xx
+è|| defšed(
+STM32F415xx
+è|| defšed(
+STM32F407xx
+è|| defšed(
+STM32F417xx
+)\
+
+96 || 
+defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+97 || 
+defšed
+(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+è|| defšed(
+STM32F412Zx
+è|| 
+	$defšed
+(
+STM32F412Vx
+)
+
+100 
+STM32F412Zx
+ || 
+STM32F412Vx
+ */
+
+102 #ià
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+103 || 
+	`defšed
+(
+STM32F446xx
+è|| defšed(
+STM32F469xx
+è|| 
+	$defšed
+(
+STM32F479xx
+)
+
+106 
+STM32F479xx
+ */
+
+111 
+	#VECT_TAB_OFFSET
+ 0x00
+
+	)
+
+138 
+ušt32_t
+ 
+Sy¡emCÜeClock
+ = 16000000;
+
+139 cÚ¡ 
+ušt8_t
+ 
+AHBP»scTabË
+[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9
+	}
+};
+
+140 cÚ¡ 
+ušt8_t
+ 
+	gAPBP»scTabË
+[8] = {0, 0, 0, 0, 1, 2, 3, 4};
+
+149 #ià
+defšed
+ (
+DATA_IN_ExtSRAM
+è|| defšed (
+DATA_IN_ExtSDRAM
+)
+
+150 
+Sy¡emIn™_ExtMemCŽ
+();
+
+168 
+	$Sy¡emIn™
+()
+
+171 #ià(
+__FPU_PRESENT
+ =ð1è&& (
+__FPU_USED
+ == 1)
+
+172 
+SCB
+->
+CPACR
+ |= ((3UL << 10*2)|(3UL << 11*2));
+
+176 
+RCC
+->
+CR
+ |ð(
+ušt32_t
+)0x00000001;
+
+179 
+RCC
+->
+CFGR
+ = 0x00000000;
+
+182 
+RCC
+->
+CR
+ &ð(
+ušt32_t
+)0xFEF6FFFF;
+
+185 
+RCC
+->
+PLLCFGR
+ = 0x24003010;
+
+188 
+RCC
+->
+CR
+ &ð(
+ušt32_t
+)0xFFFBFFFF;
+
+191 
+RCC
+->
+CIR
+ = 0x00000000;
+
+193 #ià
+	`defšed
+ (
+DATA_IN_ExtSRAM
+è|| defšed (
+DATA_IN_ExtSDRAM
+)
+
+194 
+	`Sy¡emIn™_ExtMemCŽ
+();
+
+198 #ifdeà
+VECT_TAB_SRAM
+
+
+199 
+SCB
+->
+VTOR
+ = 
+SRAM_BASE
+ | 
+VECT_TAB_OFFSET
+;
+
+201 
+SCB
+->
+VTOR
+ = 
+FLASH_BASE
+ | 
+VECT_TAB_OFFSET
+;
+
+203 
+	}
+}
+
+241 
+	$Sy¡emCÜeClockUpd©e
+()
+
+243 
+ušt32_t
+ 
+tmp
+ = 0, 
+¶lvco
+ = 0, 
+¶Í
+ = 2, 
+¶lsourû
+ = 0, 
+¶lm
+ = 2;
+
+246 
+tmp
+ = 
+RCC
+->
+CFGR
+ & 
+RCC_CFGR_SWS
+;
+
+248 
+tmp
+)
+
+251 
+Sy¡emCÜeClock
+ = 
+HSI_VALUE
+;
+
+254 
+Sy¡emCÜeClock
+ = 
+HSE_VALUE
+;
+
+261 
+¶lsourû
+ = (
+RCC
+->
+PLLCFGR
+ & 
+RCC_PLLCFGR_PLLSRC
+) >> 22;
+
+262 
+¶lm
+ = 
+RCC
+->
+PLLCFGR
+ & 
+RCC_PLLCFGR_PLLM
+;
+
+264 ià(
+¶lsourû
+ != 0)
+
+267 
+¶lvco
+ = (
+HSE_VALUE
+ / 
+¶lm
+è* ((
+RCC
+->
+PLLCFGR
+ & 
+RCC_PLLCFGR_PLLN
+) >> 6);
+
+272 
+¶lvco
+ = (
+HSI_VALUE
+ / 
+¶lm
+è* ((
+RCC
+->
+PLLCFGR
+ & 
+RCC_PLLCFGR_PLLN
+) >> 6);
+
+275 
+¶Í
+ = (((
+RCC
+->
+PLLCFGR
+ & 
+RCC_PLLCFGR_PLLP
+) >>16) + 1 ) *2;
+
+276 
+Sy¡emCÜeClock
+ = 
+¶lvco
+/
+¶Í
+;
+
+279 
+Sy¡emCÜeClock
+ = 
+HSI_VALUE
+;
+
+284 
+tmp
+ = 
+AHBP»scTabË
+[((
+RCC
+->
+CFGR
+ & 
+RCC_CFGR_HPRE
+) >> 4)];
+
+286 
+Sy¡emCÜeClock
+ >>ð
+tmp
+;
+
+287 
+	}
+}
+
+289 #ià
+defšed
+ (
+DATA_IN_ExtSRAM
+è&& defšed (
+DATA_IN_ExtSDRAM
+)
+
+290 #ià
+defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+291 || 
+defšed
+(
+STM32F469xx
+è|| 
+	$defšed
+(
+STM32F479xx
+)
+
+300 
+	$Sy¡emIn™_ExtMemCŽ
+()
+
+302 
+__IO
+ 
+ušt32_t
+ 
+tmp
+ = 0x00;
+
+304 
+ušt32_t
+ 
+tm´eg
+ = 0, 
+timeout
+ = 0xFFFF;
+
+305 
+__IO
+ 
+ušt32_t
+ 
+šdex
+;
+
+308 
+RCC
+->
+AHB1ENR
+ |= 0x000001F8;
+
+311 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB1ENR
+, 
+RCC_AHB1ENR_GPIOCEN
+);
+
+314 
+GPIOD
+->
+AFR
+[0] = 0x00CCC0CC;
+
+315 
+GPIOD
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+317 
+GPIOD
+->
+MODER
+ = 0xAAAA0A8A;
+
+319 
+GPIOD
+->
+OSPEEDR
+ = 0xFFFF0FCF;
+
+321 
+GPIOD
+->
+OTYPER
+ = 0x00000000;
+
+323 
+GPIOD
+->
+PUPDR
+ = 0x00000000;
+
+326 
+GPIOE
+->
+AFR
+[0] = 0xC00CC0CC;
+
+327 
+GPIOE
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+329 
+GPIOE
+->
+MODER
+ = 0xAAAA828A;
+
+331 
+GPIOE
+->
+OSPEEDR
+ = 0xFFFFC3CF;
+
+333 
+GPIOE
+->
+OTYPER
+ = 0x00000000;
+
+335 
+GPIOE
+->
+PUPDR
+ = 0x00000000;
+
+338 
+GPIOF
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+339 
+GPIOF
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+341 
+GPIOF
+->
+MODER
+ = 0xAA800AAA;
+
+343 
+GPIOF
+->
+OSPEEDR
+ = 0xAA800AAA;
+
+345 
+GPIOF
+->
+OTYPER
+ = 0x00000000;
+
+347 
+GPIOF
+->
+PUPDR
+ = 0x00000000;
+
+350 
+GPIOG
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+351 
+GPIOG
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+353 
+GPIOG
+->
+MODER
+ = 0xAAAAAAAA;
+
+355 
+GPIOG
+->
+OSPEEDR
+ = 0xAAAAAAAA;
+
+357 
+GPIOG
+->
+OTYPER
+ = 0x00000000;
+
+359 
+GPIOG
+->
+PUPDR
+ = 0x00000000;
+
+362 
+GPIOH
+->
+AFR
+[0] = 0x00C0CC00;
+
+363 
+GPIOH
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+365 
+GPIOH
+->
+MODER
+ = 0xAAAA08A0;
+
+367 
+GPIOH
+->
+OSPEEDR
+ = 0xAAAA08A0;
+
+369 
+GPIOH
+->
+OTYPER
+ = 0x00000000;
+
+371 
+GPIOH
+->
+PUPDR
+ = 0x00000000;
+
+374 
+GPIOI
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+375 
+GPIOI
+->
+AFR
+[1] = 0x00000CC0;
+
+377 
+GPIOI
+->
+MODER
+ = 0x0028AAAA;
+
+379 
+GPIOI
+->
+OSPEEDR
+ = 0x0028AAAA;
+
+381 
+GPIOI
+->
+OTYPER
+ = 0x00000000;
+
+383 
+GPIOI
+->
+PUPDR
+ = 0x00000000;
+
+387 
+RCC
+->
+AHB3ENR
+ |= 0x00000001;
+
+389 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB3ENR
+, 
+RCC_AHB3ENR_FMCEN
+);
+
+391 
+FMC_Bªk5_6
+->
+SDCR
+[0] = 0x000019E4;
+
+392 
+FMC_Bªk5_6
+->
+SDTR
+[0] = 0x01115351;
+
+396 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000011;
+
+397 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+398 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+400 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+404 
+šdex
+ = 0; index<1000; index++);
+
+407 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000012;
+
+408 
+timeout
+ = 0xFFFF;
+
+409 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+411 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+415 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000073;
+
+416 
+timeout
+ = 0xFFFF;
+
+417 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+419 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+423 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00046014;
+
+424 
+timeout
+ = 0xFFFF;
+
+425 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+427 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+431 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDRTR
+;
+
+432 
+FMC_Bªk5_6
+->
+SDRTR
+ = (
+tm´eg
+ | (0x0000027C<<1));
+
+435 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDCR
+[0];
+
+436 
+FMC_Bªk5_6
+->
+SDCR
+[0] = (
+tm´eg
+ & 0xFFFFFDFF);
+
+438 #ià
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)
+
+440 
+FMC_Bªk1
+->
+BTCR
+[2] = 0x00001011;
+
+441 
+FMC_Bªk1
+->
+BTCR
+[3] = 0x00000201;
+
+442 
+FMC_Bªk1E
+->
+BWTR
+[2] = 0x0fffffff;
+
+444 #ià
+	`defšed
+(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+)
+
+446 
+FMC_Bªk1
+->
+BTCR
+[2] = 0x00001091;
+
+447 
+FMC_Bªk1
+->
+BTCR
+[3] = 0x00110212;
+
+448 
+FMC_Bªk1E
+->
+BWTR
+[2] = 0x0fffffff;
+
+451 ()(
+tmp
+);
+
+452 
+	}
+}
+
+454 #–ià
+defšed
+ (
+DATA_IN_ExtSRAM
+è|| defšed (
+DATA_IN_ExtSDRAM
+)
+
+463 
+	$Sy¡emIn™_ExtMemCŽ
+()
+
+465 
+__IO
+ 
+ušt32_t
+ 
+tmp
+ = 0x00;
+
+466 #ià
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+467 || 
+	`defšed
+(
+STM32F446xx
+è|| defšed(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+)
+
+468 #ià
+	`defšed
+ (
+DATA_IN_ExtSDRAM
+)
+
+469 
+ušt32_t
+ 
+tm´eg
+ = 0, 
+timeout
+ = 0xFFFF;
+
+470 
+__IO
+ 
+ušt32_t
+ 
+šdex
+;
+
+472 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+475 
+RCC
+->
+AHB1ENR
+ |= 0x0000007D;
+
+479 
+RCC
+->
+AHB1ENR
+ |= 0x000001F8;
+
+482 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB1ENR
+, 
+RCC_AHB1ENR_GPIOCEN
+);
+
+484 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+486 
+GPIOA
+->
+AFR
+[0] |= 0xC0000000;
+
+487 
+GPIOA
+->
+AFR
+[1] |= 0x00000000;
+
+489 
+GPIOA
+->
+MODER
+ |= 0x00008000;
+
+491 
+GPIOA
+->
+OSPEEDR
+ |= 0x00008000;
+
+493 
+GPIOA
+->
+OTYPER
+ |= 0x00000000;
+
+495 
+GPIOA
+->
+PUPDR
+ |= 0x00000000;
+
+498 
+GPIOC
+->
+AFR
+[0] |= 0x00CC0000;
+
+499 
+GPIOC
+->
+AFR
+[1] |= 0x00000000;
+
+501 
+GPIOC
+->
+MODER
+ |= 0x00000A00;
+
+503 
+GPIOC
+->
+OSPEEDR
+ |= 0x00000A00;
+
+505 
+GPIOC
+->
+OTYPER
+ |= 0x00000000;
+
+507 
+GPIOC
+->
+PUPDR
+ |= 0x00000000;
+
+511 
+GPIOD
+->
+AFR
+[0] = 0x000000CC;
+
+512 
+GPIOD
+->
+AFR
+[1] = 0xCC000CCC;
+
+514 
+GPIOD
+->
+MODER
+ = 0xA02A000A;
+
+516 
+GPIOD
+->
+OSPEEDR
+ = 0xA02A000A;
+
+518 
+GPIOD
+->
+OTYPER
+ = 0x00000000;
+
+520 
+GPIOD
+->
+PUPDR
+ = 0x00000000;
+
+523 
+GPIOE
+->
+AFR
+[0] = 0xC00000CC;
+
+524 
+GPIOE
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+526 
+GPIOE
+->
+MODER
+ = 0xAAAA800A;
+
+528 
+GPIOE
+->
+OSPEEDR
+ = 0xAAAA800A;
+
+530 
+GPIOE
+->
+OTYPER
+ = 0x00000000;
+
+532 
+GPIOE
+->
+PUPDR
+ = 0x00000000;
+
+535 
+GPIOF
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+536 
+GPIOF
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+538 
+GPIOF
+->
+MODER
+ = 0xAA800AAA;
+
+540 
+GPIOF
+->
+OSPEEDR
+ = 0xAA800AAA;
+
+542 
+GPIOF
+->
+OTYPER
+ = 0x00000000;
+
+544 
+GPIOF
+->
+PUPDR
+ = 0x00000000;
+
+547 
+GPIOG
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+548 
+GPIOG
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+550 
+GPIOG
+->
+MODER
+ = 0xAAAAAAAA;
+
+552 
+GPIOG
+->
+OSPEEDR
+ = 0xAAAAAAAA;
+
+554 
+GPIOG
+->
+OTYPER
+ = 0x00000000;
+
+556 
+GPIOG
+->
+PUPDR
+ = 0x00000000;
+
+558 #ià
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+559 || 
+	`defšed
+(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+)
+
+561 
+GPIOH
+->
+AFR
+[0] = 0x00C0CC00;
+
+562 
+GPIOH
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+564 
+GPIOH
+->
+MODER
+ = 0xAAAA08A0;
+
+566 
+GPIOH
+->
+OSPEEDR
+ = 0xAAAA08A0;
+
+568 
+GPIOH
+->
+OTYPER
+ = 0x00000000;
+
+570 
+GPIOH
+->
+PUPDR
+ = 0x00000000;
+
+573 
+GPIOI
+->
+AFR
+[0] = 0xCCCCCCCC;
+
+574 
+GPIOI
+->
+AFR
+[1] = 0x00000CC0;
+
+576 
+GPIOI
+->
+MODER
+ = 0x0028AAAA;
+
+578 
+GPIOI
+->
+OSPEEDR
+ = 0x0028AAAA;
+
+580 
+GPIOI
+->
+OTYPER
+ = 0x00000000;
+
+582 
+GPIOI
+->
+PUPDR
+ = 0x00000000;
+
+587 
+RCC
+->
+AHB3ENR
+ |= 0x00000001;
+
+589 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB3ENR
+, 
+RCC_AHB3ENR_FMCEN
+);
+
+592 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+593 
+FMC_Bªk5_6
+->
+SDCR
+[0] = 0x00001954;
+
+595 
+FMC_Bªk5_6
+->
+SDCR
+[0] = 0x000019E4;
+
+597 
+FMC_Bªk5_6
+->
+SDTR
+[0] = 0x01115351;
+
+601 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000011;
+
+602 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+603 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+605 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+609 
+šdex
+ = 0; index<1000; index++);
+
+612 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000012;
+
+613 
+timeout
+ = 0xFFFF;
+
+614 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+616 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+620 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+621 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x000000F3;
+
+623 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00000073;
+
+625 
+timeout
+ = 0xFFFF;
+
+626 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+628 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+632 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+633 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00044014;
+
+635 
+FMC_Bªk5_6
+->
+SDCMR
+ = 0x00046014;
+
+637 
+timeout
+ = 0xFFFF;
+
+638 (
+tm´eg
+ !ð0è&& (
+timeout
+-- > 0))
+
+640 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDSR
+ & 0x00000020;
+
+644 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDRTR
+;
+
+645 #ià
+	`defšed
+(
+STM32F446xx
+)
+
+646 
+FMC_Bªk5_6
+->
+SDRTR
+ = (
+tm´eg
+ | (0x0000050C<<1));
+
+648 
+FMC_Bªk5_6
+->
+SDRTR
+ = (
+tm´eg
+ | (0x0000027C<<1));
+
+652 
+tm´eg
+ = 
+FMC_Bªk5_6
+->
+SDCR
+[0];
+
+653 
+FMC_Bªk5_6
+->
+SDCR
+[0] = (
+tm´eg
+ & 0xFFFFFDFF);
+
+657 #ià
+	`defšed
+(
+STM32F405xx
+è|| defšed(
+STM32F415xx
+è|| defšed(
+STM32F407xx
+è|| defšed(
+STM32F417xx
+)\
+
+658 || 
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)\
+
+659 || 
+	`defšed
+(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+è|| defšed(
+STM32F412Zx
+è|| defšed(
+STM32F412Vx
+)
+
+661 #ià
+	`defšed
+(
+DATA_IN_ExtSRAM
+)
+
+664 
+RCC
+->
+AHB1ENR
+ |= 0x00000078;
+
+666 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB1ENR
+, 
+RCC_AHB1ENR_GPIODEN
+);
+
+669 
+GPIOD
+->
+AFR
+[0] = 0x00CCC0CC;
+
+670 
+GPIOD
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+672 
+GPIOD
+->
+MODER
+ = 0xAAAA0A8A;
+
+674 
+GPIOD
+->
+OSPEEDR
+ = 0xFFFF0FCF;
+
+676 
+GPIOD
+->
+OTYPER
+ = 0x00000000;
+
+678 
+GPIOD
+->
+PUPDR
+ = 0x00000000;
+
+681 
+GPIOE
+->
+AFR
+[0] = 0xC00CC0CC;
+
+682 
+GPIOE
+->
+AFR
+[1] = 0xCCCCCCCC;
+
+684 
+GPIOE
+->
+MODER
+ = 0xAAAA828A;
+
+686 
+GPIOE
+->
+OSPEEDR
+ = 0xFFFFC3CF;
+
+688 
+GPIOE
+->
+OTYPER
+ = 0x00000000;
+
+690 
+GPIOE
+->
+PUPDR
+ = 0x00000000;
+
+693 
+GPIOF
+->
+AFR
+[0] = 0x00CCCCCC;
+
+694 
+GPIOF
+->
+AFR
+[1] = 0xCCCC0000;
+
+696 
+GPIOF
+->
+MODER
+ = 0xAA000AAA;
+
+698 
+GPIOF
+->
+OSPEEDR
+ = 0xFF000FFF;
+
+700 
+GPIOF
+->
+OTYPER
+ = 0x00000000;
+
+702 
+GPIOF
+->
+PUPDR
+ = 0x00000000;
+
+705 
+GPIOG
+->
+AFR
+[0] = 0x00CCCCCC;
+
+706 
+GPIOG
+->
+AFR
+[1] = 0x000000C0;
+
+708 
+GPIOG
+->
+MODER
+ = 0x00085AAA;
+
+710 
+GPIOG
+->
+OSPEEDR
+ = 0x000CAFFF;
+
+712 
+GPIOG
+->
+OTYPER
+ = 0x00000000;
+
+714 
+GPIOG
+->
+PUPDR
+ = 0x00000000;
+
+718 
+RCC
+->
+AHB3ENR
+ |= 0x00000001;
+
+720 #ià
+	`defšed
+(
+STM32F427xx
+è|| defšed(
+STM32F437xx
+è|| defšed(
+STM32F429xx
+è|| defšed(
+STM32F439xx
+)
+
+722 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB3ENR
+, 
+RCC_AHB3ENR_FMCEN
+);
+
+724 
+FMC_Bªk1
+->
+BTCR
+[2] = 0x00001011;
+
+725 
+FMC_Bªk1
+->
+BTCR
+[3] = 0x00000201;
+
+726 
+FMC_Bªk1E
+->
+BWTR
+[2] = 0x0fffffff;
+
+728 #ià
+	`defšed
+(
+STM32F469xx
+è|| defšed(
+STM32F479xx
+)
+
+730 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB3ENR
+, 
+RCC_AHB3ENR_FMCEN
+);
+
+732 
+FMC_Bªk1
+->
+BTCR
+[2] = 0x00001091;
+
+733 
+FMC_Bªk1
+->
+BTCR
+[3] = 0x00110212;
+
+734 
+FMC_Bªk1E
+->
+BWTR
+[2] = 0x0fffffff;
+
+736 #ià
+	`defšed
+(
+STM32F405xx
+è|| defšed(
+STM32F415xx
+è|| defšed(
+STM32F407xx
+)|| defšed(
+STM32F417xx
+)\
+
+737 || 
+	`defšed
+(
+STM32F412Zx
+è|| defšed(
+STM32F412Vx
+)
+
+739 
+tmp
+ = 
+	`READ_BIT
+(
+RCC
+->
+AHB3ENR
+, 
+RCC_AHB3ENR_FSMCEN
+);
+
+741 
+FSMC_Bªk1
+->
+BTCR
+[2] = 0x00001011;
+
+742 
+FSMC_Bªk1
+->
+BTCR
+[3] = 0x00000201;
+
+743 
+FSMC_Bªk1E
+->
+BWTR
+[2] = 0x0FFFFFFF;
+
+748 
+STM32F429xx
+ || 
+STM32F439xx
+ || 
+STM32F469xx
+ || 
+STM32F479xx
+ || 
+STM32F412Zx
+ || 
+STM32F412Vx
+ */
+
+749 ()(
+tmp
+);
+
+750 
+	}
+}
+
+	@
+1
+.
+1
+/usr/include
+6
+101
+freertos.c
+main.c
+stm32f4xx_hal_msp.c
+stm32f4xx_hal_timebase_TIM.c
+stm32f4xx_it.c
+system_stm32f4xx.c
